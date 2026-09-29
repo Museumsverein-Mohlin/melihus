@@ -74,5 +74,25 @@
     <section class="contact-teaser" id="kontakt"><div class="section-wrap contact-grid"><div><p class="eyebrow">Kontakt</p><h2>Wir freuen uns auf Sie.</h2><p>Haben Sie eine Frage, möchten Sie Mitglied werden, eine Führung buchen oder einen Anlass im Melihus planen? Schreiben Sie uns.</p><a class="button button-light" href="mailto:info@melihus.ch">info@melihus.ch <span aria-hidden="true">↗</span></a></div><div class="contact-address"><span>Museumsverein Möhlin im «Melihus»</span><strong>Bachstrasse 20<br>4313 Möhlin</strong><a href="https://www.google.com/maps/search/?api=1&query=Bachstrasse+20%2C+4313+M%C3%B6hlin" target="_blank" rel="noopener noreferrer">Anfahrt ansehen ↗</a></div></div></section>
   </main>
   <footer class="site-footer"><span>© Museumsverein Möhlin</span><span>Fotos: Sofia Chautems / Bildarchiv Museumsverein Möhlin</span><nav aria-label="Weitere Seiten und rechtliche Informationen"><a href="archiv.html">Archiv</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav></footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.timeline({defaults: {ease: 'power2.out'}})
+        .from('.hero-copy > *', {y: 24, autoAlpha: 0, duration: .7, stagger: .1})
+        .from('.hero-image', {clipPath: 'inset(0 0 100% 0)', duration: 1}, '-=.45');
+      gsap.utils.toArray(['.event-strip', '.event-gallery figure', '.intro > div', '.museum-story > *', '.exhibition-inner > *', '.section-heading', '.program-list li', '.visit-grid > *', '.association-card', '.rental-grid > *', '.member-card', '.product-card', '.partner-columns > *', '.contact-grid > *'].join(',')).forEach((element) => {
+        gsap.from(element, {y: 30, autoAlpha: 0, duration: .7, ease: 'power2.out', scrollTrigger: {trigger: element, start: 'top 86%', once: true}});
+      });
+      gsap.utils.toArray('.event-gallery figure, .member-card, .product-card').forEach((card) => {
+        const image = card.querySelector('img');
+        if (!image) return;
+        card.addEventListener('mouseenter', () => gsap.to(image, {scale: 1.035, duration: .35, ease: 'power2.out'}));
+        card.addEventListener('mouseleave', () => gsap.to(image, {scale: 1, duration: .35, ease: 'power2.out'}));
+      });
+    });
+  </script>
 </body>
 </html>
