@@ -11,6 +11,17 @@
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <div class="event-modal" id="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title" aria-describedby="event-modal-description" hidden>
+    <div class="event-modal-backdrop" data-event-close></div>
+    <div class="event-modal-card">
+      <button class="event-modal-close" type="button" aria-label="Hinweis schliessen" data-event-close>×</button>
+      <p class="eyebrow">Nächste Veranstaltung</p>
+      <h2 id="event-modal-title">Traditioneller Herbschtmärt</h2>
+      <p id="event-modal-description">Sonntag, 11. Oktober 2026 · 10–16 Uhr rund ums Melihus.</p>
+      <img src="assets/Bildschirmfoto%202026-09-27%20um%2021.53.07.png" alt="Plakat zum Herbschtmärt am 11. Oktober 2026" width="1114" height="1568">
+      <a class="button button-gold" href="#programm" data-event-close>Zum Programm <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
   <div class="topline"><span>Dorfmuseum Melihus · Bachstrasse 20 · 4313 Möhlin</span><span>Eintritt frei · Spenden willkommen</span></div>
   <header class="site-header">
     <a class="brand" href="#start" aria-label="Museumsverein Möhlin, zur Startseite"><img src="assets/melihus-logo.png" alt="" width="48" height="48"><span><strong>Museumsverein Möhlin</strong><small>Das Melihus</small></span></a>
@@ -91,6 +102,29 @@
         if (!image) return;
         card.addEventListener('mouseenter', () => gsap.to(image, {scale: 1.035, duration: .35, ease: 'power2.out'}));
         card.addEventListener('mouseleave', () => gsap.to(image, {scale: 1, duration: .35, ease: 'power2.out'}));
+      });
+
+      const eventModal = document.querySelector('#event-modal');
+      const eventCloseControls = eventModal ? eventModal.querySelectorAll('[data-event-close]') : [];
+      if (eventModal && !sessionStorage.getItem('melihus-event-notice-seen')) {
+        eventModal.hidden = false;
+        document.body.classList.add('event-modal-open');
+        gsap.from('.event-modal-backdrop', {autoAlpha: 0, duration: .35});
+        gsap.from('.event-modal-card', {autoAlpha: 0, y: 28, scale: .96, duration: .55, ease: 'power2.out'});
+        eventModal.querySelector('.event-modal-close').focus();
+      }
+      const closeEventModal = () => {
+        if (!eventModal || eventModal.hidden) return;
+        sessionStorage.setItem('melihus-event-notice-seen', '1');
+        gsap.to('.event-modal-card', {autoAlpha: 0, y: 18, duration: .25, ease: 'power2.in'});
+        gsap.to('.event-modal-backdrop', {autoAlpha: 0, duration: .25, onComplete: () => {
+          eventModal.hidden = true;
+          document.body.classList.remove('event-modal-open');
+        }});
+      };
+      eventCloseControls.forEach((control) => control.addEventListener('click', closeEventModal));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeEventModal();
       });
     });
   </script>
