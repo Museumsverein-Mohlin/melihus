@@ -171,7 +171,7 @@
       start.addEventListener('click', function () {
         var f = document.createElement('iframe');
         f.className = 'film-frame';
-        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1&modestbranding=1';
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1&modestbranding=1&cc_load_policy=0';
         f.title = 'Film: ' + folge.titel;
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.setAttribute('allowfullscreen', '');
