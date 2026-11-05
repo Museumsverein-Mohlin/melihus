@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153b36">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Der Adventskalender des Melihus: Vom 1. bis 24. Dezember öffnet sich jeden Tag ein Türchen mit einem kleinen Film über Mimi, die Museumsmaus.">
+  <title>Mimi, die Museumsmaus: Der Adventskalender · Melihus</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23153b36'/%3E%3Cpath d='M32 48V18m0 10-12-9m12 14-13-4m13-6 12-9M32 33l14-5M20 46h24' fill='none' stroke='%23e4bb64' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css?v=20261105-advent">
+  <link rel="stylesheet" href="kalender.css?v=20261105">
+  <script src="kalender.js?v=20261105c" defer></script>
+</head>
+<body class="advent">
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header legal-header">
+    <a class="brand" href="../index.html" aria-label="Zur Startseite des Museumsvereins Möhlin"><img src="../assets/melihus-logo.png" alt="" width="48" height="48"><span><strong>Museumsverein Möhlin</strong><small>Das Melihus</small></span></a>
+    <a class="header-link" href="../index.html">Zurück zur Startseite ↗</a>
+  </header>
+
+  <main id="inhalt">
+    <section class="advent-hero" aria-labelledby="advent-titel">
+      <div class="advent-hero-inner section-wrap">
+        <div class="advent-hero-text">
+          <p class="eyebrow">Adventskalender im Melihus</p>
+          <h1 id="advent-titel">Mimi, die Museumsmaus<span>Der Adventskalender</span></h1>
+          <p>Mimi ist eine kleine Maus und wohnt im Melihus, unserem Museum in Möhlin. Vom 1. bis zum 24. Dezember öffnet sich jeden Tag ein Türchen. Dahinter wartet ein kurzer Film mit Mimi.</p>
+          <p class="advent-hero-tipp">Tippe auf das Türchen von heute. Türchen von vergangenen Tagen kannst du immer wieder anschauen.</p>
+        </div>
+        <svg class="mimi" viewBox="0 0 240 220" aria-hidden="true" focusable="false">
+          <ellipse cx="120" cy="204" rx="78" ry="10" class="mimi-schatten"/>
+          <path d="M178 170c34 4 48 -22 34 -40" class="mimi-schwanz"/>
+          <ellipse cx="120" cy="150" rx="62" ry="50" class="mimi-fell"/>
+          <circle cx="78" cy="58" r="30" class="mimi-fell"/>
+          <circle cx="162" cy="58" r="30" class="mimi-fell"/>
+          <circle cx="78" cy="58" r="18" class="mimi-ohr"/>
+          <circle cx="162" cy="58" r="18" class="mimi-ohr"/>
+          <circle cx="120" cy="96" r="48" class="mimi-fell"/>
+          <circle cx="102" cy="90" r="6" class="mimi-auge"/>
+          <circle cx="138" cy="90" r="6" class="mimi-auge"/>
+          <circle cx="104" cy="88" r="2" class="mimi-glanz"/>
+          <circle cx="140" cy="88" r="2" class="mimi-glanz"/>
+          <circle cx="120" cy="110" r="7" class="mimi-nase"/>
+          <path d="M86 112h-22M86 118l-20 6M154 112h22M154 118l20 6" class="mimi-schnauz"/>
+          <path d="M70 140c30 14 70 14 100 0l-6 16c-28 10-60 10-88 0z" class="mimi-schal"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="advent-kalender section-wrap" aria-labelledby="kalender-titel">
+      <h2 id="kalender-titel" class="visually-hidden">Die 24 Türchen</h2>
+      <p class="advent-testmodus" id="testmodus" hidden></p>
+      <p class="advent-status" id="status" role="status">Der Kalender wird geladen …</p>
+      <ol class="tuerchen-raster" id="raster" aria-label="Adventskalender mit 24 Türchen"></ol>
+      <noscript><p class="advent-status">Für den Adventskalender muss JavaScript eingeschaltet sein.</p></noscript>
+    </section>
+
+    <p class="advent-entstehung section-wrap">Die Geschichten von Mimi stammen von Gerd Fromm. Bilder, Stimme und Animation sind mit KI-Werkzeugen entstanden.</p>
+  </main>
+
+  <dialog class="film-dialog" id="film-dialog" aria-labelledby="film-titel">
+    <div class="film-dialog-inner">
+      <button type="button" class="film-schliessen" id="film-schliessen" aria-label="Fenster schliessen">×</button>
+      <p class="eyebrow" id="film-folge"></p>
+      <h2 id="film-titel"></h2>
+      <div class="film-buehne" id="film-buehne"></div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer"><span>© Museumsverein Möhlin</span><nav aria-label="Weitere Seiten und rechtliche Informationen"><a href="../index.html">Startseite</a><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></nav></footer>
+</body>
+</html>

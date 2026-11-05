@@ -1,0 +1,198 @@
+{
+  "_hinweis": "youtube = Video-ID (11 Zeichen, z.B. aus https://youtu.be/ABCDEFGHIJK). video = optionaler Pfad zu einer eigenen MP4-Datei (z.B. videos/Folge01.mp4); ist video gesetzt, wird diese statt YouTube abgespielt. Leere Felder = 'Dieser Film kommt bald.' alleOffen: true = alle Türchen zum Testen offen; vor der Veröffentlichung auf false setzen.",
+  "alleOffen": true,
+  "folgen": [
+    {
+      "nummer": 1,
+      "titel": "Mimi und die Schulklasse",
+      "datum": "2026-12-01",
+      "vorschaubild": "bilder/Folge01.jpg",
+      "youtube": "764jHQDFMJ8",
+      "video": ""
+    },
+    {
+      "nummer": 2,
+      "titel": "Der Glücksbatzen",
+      "datum": "2026-12-02",
+      "vorschaubild": "bilder/Folge02.jpg",
+      "youtube": "b6XvwubibNI",
+      "video": ""
+    },
+    {
+      "nummer": 3,
+      "titel": "Der erste Schnee",
+      "datum": "2026-12-03",
+      "vorschaubild": "bilder/Folge03.jpg",
+      "youtube": "puiuz_62iKI",
+      "video": ""
+    },
+    {
+      "nummer": 4,
+      "titel": "Der Wunschzettel",
+      "datum": "2026-12-04",
+      "vorschaubild": "bilder/Folge04.jpg",
+      "youtube": "lV8mq66Wyuw",
+      "video": ""
+    },
+    {
+      "nummer": 5,
+      "titel": "Die stehende Standuhr",
+      "datum": "2026-12-05",
+      "vorschaubild": "bilder/Folge05.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 6,
+      "titel": "Der Samichlaus kommt",
+      "datum": "2026-12-06",
+      "vorschaubild": "bilder/Folge06.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 7,
+      "titel": "Das Licht der Laternen",
+      "datum": "2026-12-07",
+      "vorschaubild": "bilder/Folge07.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 8,
+      "titel": "Guetzli im Museum",
+      "datum": "2026-12-08",
+      "vorschaubild": "bilder/Folge08.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 9,
+      "titel": "Der Schal für Mimi",
+      "datum": "2026-12-09",
+      "vorschaubild": "bilder/Folge09.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 10,
+      "titel": "Der Buchstabe M",
+      "datum": "2026-12-10",
+      "vorschaubild": "bilder/Folge10.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 11,
+      "titel": "Der Spatz am Fenster",
+      "datum": "2026-12-11",
+      "vorschaubild": "bilder/Folge11.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 12,
+      "titel": "Fridolin, die Feldmaus",
+      "datum": "2026-12-12",
+      "vorschaubild": "bilder/Folge12.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 13,
+      "titel": "Die Spieluhr",
+      "datum": "2026-12-13",
+      "vorschaubild": "bilder/Folge13.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 14,
+      "titel": "Grosser Putztag",
+      "datum": "2026-12-14",
+      "vorschaubild": "bilder/Folge14.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 15,
+      "titel": "Der Schneemann",
+      "datum": "2026-12-15",
+      "vorschaubild": "bilder/Folge15.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 16,
+      "titel": "Das Schäfchen der Krippe",
+      "datum": "2026-12-16",
+      "vorschaubild": "bilder/Folge16.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 17,
+      "titel": "Der schiefe Stern",
+      "datum": "2026-12-17",
+      "vorschaubild": "bilder/Folge17.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 18,
+      "titel": "Das Lied der alten Dinge",
+      "datum": "2026-12-18",
+      "vorschaubild": "bilder/Folge18.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 19,
+      "titel": "Im Korb unterwegs",
+      "datum": "2026-12-19",
+      "vorschaubild": "bilder/Folge19.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 20,
+      "titel": "Der Weihnachtsmarkt",
+      "datum": "2026-12-20",
+      "vorschaubild": "bilder/Folge20.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 21,
+      "titel": "Die kälteste Nacht",
+      "datum": "2026-12-21",
+      "vorschaubild": "bilder/Folge21.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 22,
+      "titel": "Das Geschenk für die alten Dinge",
+      "datum": "2026-12-22",
+      "vorschaubild": "bilder/Folge22.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 23,
+      "titel": "Der Tannenbaum",
+      "datum": "2026-12-23",
+      "vorschaubild": "bilder/Folge23.jpg",
+      "youtube": "",
+      "video": ""
+    },
+    {
+      "nummer": 24,
+      "titel": "Heiligabend",
+      "datum": "2026-12-24",
+      "vorschaubild": "bilder/Folge24.jpg",
+      "youtube": "",
+      "video": ""
+    }
+  ]
+}
