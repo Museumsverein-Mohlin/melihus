@@ -12,7 +12,6 @@
   var dlgFolge = document.getElementById('film-folge');
   var dlgTitel = document.getElementById('film-titel');
   var buehne = document.getElementById('film-buehne');
-  var hinweis = document.getElementById('film-hinweis');
   var schliessen = document.getElementById('film-schliessen');
   var letzterAusloeser = null;
 
@@ -125,7 +124,6 @@
 
   function dialogLeeren() {
     buehne.textContent = '';     // entfernt auch einen laufenden YouTube-Player oder ein Video
-    hinweis.hidden = true;
   }
 
   function zeigeGesperrt(folge) {
@@ -184,7 +182,6 @@
       });
       platz.appendChild(start);
       buehne.appendChild(platz);
-      hinweis.hidden = false;
     } else {
       bald();
     }
@@ -196,7 +193,6 @@
       box.appendChild(bild(folge, 'film-vorschau'));
       box.appendChild(el('p', 'film-nachricht', 'Dieser Film kommt bald.'));
       buehne.appendChild(box);
-      hinweis.hidden = true;
     }
   }
 
