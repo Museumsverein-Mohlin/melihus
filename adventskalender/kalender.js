@@ -68,6 +68,38 @@
     return /^[A-Za-z0-9_-]{11}$/.test(id) ? id : '';
   }
 
+  /* YouTube blendet automatische Untertitel teils trotz cc_load_policy=0 ein.
+     Über die eingebaute Player-Schnittstelle (postMessage, ohne externes Skript)
+     wird das Untertitel-Modul nach dem Start wieder entfernt. */
+  var YT_HERKUNFT = 'https://www.youtube-nocookie.com';
+  function untertitelAus(frame) {
+    function senden(func, args) {
+      if (!frame.contentWindow) return;
+      frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: args || [] }), YT_HERKUNFT);
+    }
+    function aus() {
+      senden('unloadModule', ['captions']);
+      senden('unloadModule', ['cc']);
+    }
+    if (frame.contentWindow) {
+      frame.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), YT_HERKUNFT);
+    }
+    [300, 1000, 2000, 3500, 6000].forEach(function (ms) { setTimeout(aus, ms); });
+    var letzterStatus = null;
+    function horchen(e) {
+      if (e.origin !== YT_HERKUNFT || e.source !== frame.contentWindow) return;
+      if (!frame.isConnected) { window.removeEventListener('message', horchen); return; }
+      var d;
+      try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+      if (!d) return;
+      var status = d.event === 'onStateChange' ? d.info :
+        (d.event === 'infoDelivery' && d.info && typeof d.info.playerState === 'number') ? d.info.playerState : null;
+      if (d.event === 'onReady' || (status === 1 && letzterStatus !== 1)) aus();
+      if (status !== null) letzterStatus = status;
+    }
+    window.addEventListener('message', horchen);
+  }
+
   /* ---------- Kalender aufbauen ---------- */
   function aufbauen(folgen) {
     raster.textContent = '';
@@ -171,11 +203,12 @@
       start.addEventListener('click', function () {
         var f = document.createElement('iframe');
         f.className = 'film-frame';
-        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1&modestbranding=1&cc_load_policy=0';
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1&modestbranding=1&cc_load_policy=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
         f.title = 'Film: ' + folge.titel;
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.setAttribute('allowfullscreen', '');
         f.referrerPolicy = 'strict-origin-when-cross-origin';
+        f.addEventListener('load', function () { untertitelAus(f); });
         buehne.textContent = '';
         buehne.appendChild(f);
         f.focus();
