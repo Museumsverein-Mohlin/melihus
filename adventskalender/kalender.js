@@ -4,7 +4,7 @@
   'use strict';
 
   var ZEITZONE = 'Europe/Zurich';
-  var PLATZHALTER = 'bilder/platzhalter.svg';
+  var PLATZHALTER = 'bilder/platzhalter.jpg';
   var raster = document.getElementById('raster');
   var statusEl = document.getElementById('status');
   var testEl = document.getElementById('testmodus');
