@@ -1,12 +1,13 @@
 {
-  "_hinweis": "youtube = Video-ID (11 Zeichen, z.B. aus https://youtu.be/ABCDEFGHIJK). video = optionaler Pfad zu einer eigenen MP4-Datei (z.B. videos/Folge01.mp4); ist video gesetzt, wird diese statt YouTube abgespielt. Leere Felder = 'Dieser Film kommt bald.'",
+  "_hinweis": "youtube = Video-ID (11 Zeichen, z.B. aus https://youtu.be/ABCDEFGHIJK). video = optionaler Pfad zu einer eigenen MP4-Datei (z.B. videos/Folge01.mp4); ist video gesetzt, wird diese statt YouTube abgespielt. Leere Felder = 'Dieser Film kommt bald.' alleOffen: true = alle Türchen zum Testen offen; vor der Veröffentlichung auf false setzen.",
+  "alleOffen": true,
   "folgen": [
     {
       "nummer": 1,
       "titel": "Mimi und die Schulklasse",
       "datum": "2026-12-01",
       "vorschaubild": "bilder/Folge01.jpg",
-      "youtube": "",
+      "youtube": "764jHQDFMJ8",
       "video": ""
     },
     {
@@ -14,7 +15,7 @@
       "titel": "Der Glücksbatzen",
       "datum": "2026-12-02",
       "vorschaubild": "bilder/Folge02.jpg",
-      "youtube": "",
+      "youtube": "b6XvwubibNI",
       "video": ""
     },
     {
@@ -22,7 +23,7 @@
       "titel": "Der erste Schnee",
       "datum": "2026-12-03",
       "vorschaubild": "bilder/Folge03.jpg",
-      "youtube": "",
+      "youtube": "puiuz_62iKI",
       "video": ""
     },
     {
@@ -30,7 +31,7 @@
       "titel": "Der Wunschzettel",
       "datum": "2026-12-04",
       "vorschaubild": "bilder/Folge04.jpg",
-      "youtube": "",
+      "youtube": "lV8mq66Wyuw",
       "video": ""
     },
     {
