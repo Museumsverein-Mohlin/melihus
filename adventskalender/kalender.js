@@ -252,7 +252,8 @@
       var folgen = (daten.folgen || []).slice().sort(function (a, b) { return a.nummer - b.nummer; });
       if (!folgen.length) throw new Error('leer');
       // Testschalter in kalender.json: "alleOffen": true öffnet alle Türchen (vor der Veröffentlichung auf false setzen)
-      if (daten.alleOffen === true && !gueltigesDatum(testDatum)) {
+      var alleTest = new URLSearchParams(window.location.search).get('test') === 'alle';
+      if ((daten.alleOffen === true || alleTest) && !gueltigesDatum(testDatum)) {
         heute = '2026-12-31';
         testEl.textContent = 'Testmodus: Alle Türchen sind zum Ausprobieren freigeschaltet.';
         testEl.hidden = false;
