@@ -1,6 +1,11 @@
 {
   "_hinweis": "youtube = Video-ID (11 Zeichen, z.B. aus https://youtu.be/ABCDEFGHIJK). video = optionaler Pfad zu einer eigenen MP4-Datei (z.B. videos/Folge01.mp4); ist video gesetzt, wird diese statt YouTube abgespielt. Leere Felder = 'Dieser Film kommt bald.' alleOffen: true = alle Türchen für alle offen. Zum Testen stattdessen ?test=alle an die Adresse hängen.",
   "alleOffen": false,
+  "intro": {
+    "titel": "Mimi, die Museumsmaus: Der Intro-Film",
+    "vorschaubild": "bilder/platzhalter.jpg",
+    "youtube": "QQVEWAKOUCQ"
+  },
   "folgen": [
     {
       "nummer": 1,

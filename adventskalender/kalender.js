@@ -169,7 +169,7 @@
 
   function zeigeFilm(folge) {
     dialogLeeren();
-    dlgFolge.textContent = 'Türchen ' + folge.nummer + ' · ' + tagText(folge.datum);
+    dlgFolge.textContent = folge.intro ? 'Einführung' : 'Türchen ' + folge.nummer + ' · ' + tagText(folge.datum);
     dlgTitel.textContent = folge.titel;
 
     var videoPfad = (folge.video || '').trim();
@@ -259,6 +259,17 @@
         testEl.hidden = false;
       }
       aufbauen(folgen);
+      // Intro-Film: immer abspielbar, unabhängig vom Datum
+      var intro = daten.intro;
+      var introKnopf = document.getElementById('intro-knopf');
+      if (intro && introKnopf && /^[A-Za-z0-9_-]{11}$/.test((intro.youtube || '').trim())) {
+        var introFolge = { intro: true, titel: intro.titel || 'Der Intro-Film', vorschaubild: intro.vorschaubild || PLATZHALTER, youtube: intro.youtube.trim(), video: intro.video || '' };
+        introKnopf.hidden = false;
+        introKnopf.addEventListener('click', function () {
+          letzterAusloeser = introKnopf;
+          zeigeFilm(introFolge);
+        });
+      }
     })
     .catch(function () {
       statusEl.textContent = 'Der Adventskalender konnte gerade nicht geladen werden. Bitte versuche es später noch einmal.';

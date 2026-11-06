@@ -510,3 +510,41 @@
 }
 .kalender-schild::before { left: .55em; }
 .kalender-schild::after { right: .55em; }
+
+/* ---------- Intro-Film-Knopf ---------- */
+.intro-knopf {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 18px;
+  padding: 12px 22px 12px 14px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #3a2410;
+  background: linear-gradient(160deg, #e8d3a4, #cfb27a 60%, #b8975c);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 0 3px #2a190c, 0 4px 10px rgba(0, 0, 0, .35), inset 0 0 8px rgba(110, 70, 20, .35);
+  cursor: pointer;
+}
+.intro-knopf[hidden] { display: none; }
+.intro-knopf:hover { filter: brightness(1.06); }
+.intro-knopf:focus-visible { outline: 4px solid var(--gold); outline-offset: 4px; }
+.intro-symbol {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2a190c;
+  position: relative;
+  flex: none;
+}
+.intro-symbol::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 9px;
+  border-left: 14px solid #f3dca4;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
