@@ -569,3 +569,7 @@
 .intro-text { display: block; line-height: 1.2; }
 .intro-text small { display: block; font-weight: 600; font-size: .82rem; opacity: .8; }
 .intro-knopf .intro-symbol { display: none; }
+
+.advent-entstehung a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.advent-entstehung a:hover { text-decoration-thickness: 2px; }
+.advent-entstehung a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
