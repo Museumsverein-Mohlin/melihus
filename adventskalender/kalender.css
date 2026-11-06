@@ -548,3 +548,24 @@
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
 }
+
+/* Intro-Knopf mit Mimi */
+.intro-knopf {
+  position: relative;
+  margin: 76px 0 18px;
+  padding: 14px 28px 14px 120px;
+  min-height: 64px;
+  text-align: left;
+}
+.intro-mimi {
+  position: absolute;
+  left: 12px;
+  bottom: -4px;
+  width: auto;
+  height: 128px;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, .4));
+  pointer-events: none;
+}
+.intro-text { display: block; line-height: 1.2; }
+.intro-text small { display: block; font-weight: 600; font-size: .82rem; opacity: .8; }
+.intro-knopf .intro-symbol { display: none; }
