@@ -360,3 +360,117 @@
   .tuerchen-tuer, .tuerchen-bild { transition: none; }
   .ist-heute .tuerchen-tuer { animation: none; }
 }
+
+/* ---------- Altholz-Look: Brett mit Fensterläden ---------- */
+.advent-kalender {
+  background:
+    /* Nägel in den Ecken */
+    radial-gradient(circle at 50% 50%, #b9a584 0 2px, #3a2814 3px, transparent 5px) 14px 14px / 12px 12px no-repeat,
+    radial-gradient(circle at 50% 50%, #b9a584 0 2px, #3a2814 3px, transparent 5px) calc(100% - 14px) 14px / 12px 12px no-repeat,
+    radial-gradient(circle at 50% 50%, #b9a584 0 2px, #3a2814 3px, transparent 5px) 14px calc(100% - 14px) / 12px 12px no-repeat,
+    radial-gradient(circle at 50% 50%, #b9a584 0 2px, #3a2814 3px, transparent 5px) calc(100% - 14px) calc(100% - 14px) / 12px 12px no-repeat,
+    /* Astlöcher */
+    radial-gradient(ellipse 26px 40px at 16% 22%, rgba(20, 10, 4, .55) 0 30%, rgba(20, 10, 4, .22) 55%, transparent 72%),
+    radial-gradient(ellipse 20px 32px at 71% 61%, rgba(20, 10, 4, .5) 0 30%, rgba(20, 10, 4, .2) 55%, transparent 72%),
+    radial-gradient(ellipse 30px 44px at 90% 14%, rgba(20, 10, 4, .45) 0 30%, rgba(20, 10, 4, .18) 55%, transparent 72%),
+    /* Fugen zwischen den Brettern */
+    repeating-linear-gradient(90deg, transparent 0 236px, rgba(10, 5, 2, .75) 236px 239px, rgba(255, 220, 160, .08) 239px 241px),
+    /* Maserung */
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .10) 0 1px, transparent 1px 6px, rgba(255, 235, 200, .035) 6px 7px, transparent 7px 17px),
+    repeating-linear-gradient(88deg, rgba(0, 0, 0, .08) 0 2px, transparent 2px 41px),
+    /* Verwitterung */
+    linear-gradient(180deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .04) 35%, rgba(0, 0, 0, .2)),
+    linear-gradient(95deg, #5a4129, #4a3220 40%, #55391f 70%, #3f2a18);
+  box-shadow: inset 0 0 0 7px #2a1a0d, inset 0 0 0 9px #6b4c2e, inset 0 0 60px rgba(0, 0, 0, .55), 0 18px 40px rgba(13, 40, 38, .22);
+}
+
+/* Fensterrahmen mit Sims */
+.tuerchen-knopf {
+  background: #1b0f06;
+  border-radius: 3px;
+  box-shadow:
+    inset 0 0 0 4px #6a4a2a,
+    inset 0 0 0 5px #24150a,
+    inset 0 0 0 8px #4a3017,
+    inset 0 8px 20px rgba(0, 0, 0, .7),
+    0 5px 0 #2a190c,
+    0 9px 12px rgba(0, 0, 0, .5);
+}
+.tuerchen-innen { inset: 9px; border-radius: 1px; }
+
+/* Fensterladen */
+.tuerchen-tuer {
+  border-radius: 2px;
+  background:
+    radial-gradient(ellipse 30% 14% at 22% 18%, rgba(0, 0, 0, .22), transparent 70%),
+    radial-gradient(ellipse 26% 12% at 80% 84%, rgba(0, 0, 0, .2), transparent 70%),
+    linear-gradient(100deg, rgba(160, 150, 130, .10), transparent 30%, rgba(160, 150, 130, .08) 60%, transparent),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .10) 0 1px, transparent 1px 5px, rgba(255, 235, 200, .06) 5px 6px, transparent 6px 11px),
+    linear-gradient(165deg, #8a6540, #6e4d2d 50%, #553920);
+  box-shadow:
+    inset 0 0 0 2px rgba(30, 16, 6, .7),
+    inset 0 0 0 5px rgba(190, 150, 100, .16),
+    inset 0 0 0 6px rgba(30, 16, 6, .55),
+    0 2px 6px rgba(0, 0, 0, .45);
+}
+/* Lamellen */
+.tuerchen-tuer::before {
+  content: '';
+  position: absolute;
+  inset: 17% 13% 17% 13%;
+  border-radius: 1px;
+  background:
+    repeating-linear-gradient(180deg, rgba(20, 10, 3, .55) 0 2px, rgba(255, 225, 170, .16) 2px 3px, rgba(0, 0, 0, .12) 3px 9px),
+    linear-gradient(90deg, #4d331c, #5d3f24 50%, #4d331c);
+  box-shadow: 0 0 0 2px rgba(25, 13, 5, .65), 0 0 0 4px rgba(190, 150, 100, .12);
+}
+/* Eisenbänder (Scharniere) links, Schliesshaken rechts */
+.tuerchen-tuer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#34302b, #14110f) 0 10% / 36% 7px no-repeat,
+    linear-gradient(#34302b, #14110f) 0 90% / 36% 7px no-repeat,
+    radial-gradient(circle, #8f8777 0 1px, #1a1714 2px, transparent 3px) 8% 10% / 9px 9px no-repeat,
+    radial-gradient(circle, #8f8777 0 1px, #1a1714 2px, transparent 3px) 8% 90% / 9px 9px no-repeat;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .6));
+}
+/* Zahl auf kleiner Holztafel */
+.tuerchen-zahl {
+  position: relative;
+  z-index: 1;
+  min-width: 1.7em;
+  padding: .12em .22em .08em;
+  text-align: center;
+  font-size: clamp(1.7rem, 6vw, 2.5rem);
+  color: #3a2410;
+  text-shadow: 0 1px 0 rgba(255, 240, 210, .5);
+  background:
+    repeating-linear-gradient(90deg, rgba(90, 60, 20, .10) 0 1px, transparent 1px 5px),
+    linear-gradient(160deg, #e8d3a4, #cfb27a 60%, #b8975c);
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px #2a190c, 0 3px 6px rgba(0, 0, 0, .5), inset 0 0 8px rgba(110, 70, 20, .35);
+}
+.tuerchen-knauf {
+  z-index: 1;
+  right: 5%;
+  width: 11px;
+  height: 11px;
+  margin-top: -5px;
+  background: radial-gradient(circle at 35% 35%, #d8ccb0, #8d826d 55%, #3b342a);
+  box-shadow: 0 0 0 2px #1a1714, 0 2px 3px rgba(0, 0, 0, .6);
+}
+
+.ist-zu .tuerchen-tuer { filter: saturate(.8) brightness(.9); }
+.ist-heute .tuerchen-tuer {
+  box-shadow:
+    inset 0 0 0 2px rgba(30, 16, 6, .7),
+    inset 0 0 0 5px rgba(190, 150, 100, .2),
+    0 0 0 3px var(--gold),
+    0 0 26px 4px rgba(246, 223, 164, .6);
+}
+.ist-offen .tuerchen-tuer {
+  box-shadow: inset 0 0 0 2px rgba(30, 16, 6, .7), 6px 4px 14px rgba(0, 0, 0, .5);
+}
