@@ -16,6 +16,19 @@
   var letzterAusloeser = null;
 
   /* ---------- Datum: echtes Datum in Zürich oder Testdatum aus ?datum=JJJJ-MM-TT ---------- */
+  /* Anonymer Zähler: meldet nur die Türchen-Nummer (0 = Intro-Film). Keine Cookies, keine Personendaten.
+     Nur aktiv, wenn in kalender.json "zaehler" gesetzt ist und kein Testmodus läuft. */
+  var zaehlerUrl = '';
+  function zaehlen(folge) {
+    if (!zaehlerUrl) return;
+    var n = folge.intro ? 0 : folge.nummer;
+    if (typeof n !== 'number' || n < 0 || n > 24) return;
+    try {
+      fetch(zaehlerUrl, { method: 'POST', body: String(n), headers: { 'Content-Type': 'text/plain' },
+        mode: 'cors', credentials: 'omit', referrerPolicy: 'no-referrer', keepalive: true }).catch(function () {});
+    } catch (e) { /* Zähler ist optional */ }
+  }
+
   function heuteInZuerich() {
     // en-CA liefert das Format JJJJ-MM-TT
     return new Intl.DateTimeFormat('en-CA', {
@@ -201,6 +214,7 @@
       start.appendChild(el('span', 'film-start-symbol'));
       start.appendChild(el('span', '', 'Film abspielen'));
       start.addEventListener('click', function () {
+        zaehlen(folge);
         var f = document.createElement('iframe');
         f.className = 'film-frame';
         f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1&modestbranding=1&cc_load_policy=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
@@ -258,6 +272,8 @@
         testEl.textContent = 'Testmodus: Alle Türchen sind zum Ausprobieren freigeschaltet.';
         testEl.hidden = false;
       }
+      var testlauf = alleTest || daten.alleOffen === true || gueltigesDatum(testDatum);
+      zaehlerUrl = (!testlauf && /^https:\/\/[a-z0-9.-]+\/[A-Za-z0-9._\/-]*$/.test(daten.zaehler || '')) ? daten.zaehler : '';
       aufbauen(folgen);
       // Intro-Film: immer abspielbar, unabhängig vom Datum
       var intro = daten.intro;
