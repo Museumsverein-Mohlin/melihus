@@ -1,4 +1,4 @@
-/* Mimi, die Museumsmaus – Adventskalender
+/* Meli, die Museumsmaus – Adventskalender
    Baut auf ../styles.css auf (Farben, Schriften, Kopf- und Fusszeile). */
 
 .advent {
@@ -549,7 +549,7 @@
   border-bottom: 8px solid transparent;
 }
 
-/* Intro-Knopf mit Mimi */
+/* Intro-Knopf mit Meli */
 .intro-knopf {
   position: relative;
   margin: 76px 0 18px;

@@ -1,4 +1,4 @@
-/* Mimi, die Museumsmaus – Adventskalender des Melihus
+/* Meli, die Museumsmaus – Adventskalender des Melihus
    Reines JavaScript, keine externen Bibliotheken, keine Cookies, kein Tracking. */
 (function () {
   'use strict';

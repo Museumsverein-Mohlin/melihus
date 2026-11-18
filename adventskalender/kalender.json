@@ -2,14 +2,14 @@
   "_hinweis": "youtube = Video-ID (11 Zeichen, z.B. aus https://youtu.be/ABCDEFGHIJK). video = optionaler Pfad zu einer eigenen MP4-Datei (z.B. videos/Folge01.mp4); ist video gesetzt, wird diese statt YouTube abgespielt. Leere Felder = 'Dieser Film kommt bald.' alleOffen: true = alle Türchen für alle offen. Zum Testen stattdessen ?test=alle an die Adresse hängen.",
   "alleOffen": false,
   "intro": {
-    "titel": "Mimi, die Museumsmaus: Der Intro-Film",
+    "titel": "Meli, die Museumsmaus: Der Intro-Film",
     "vorschaubild": "bilder/Intro.jpg",
     "youtube": "1GuNh1pwvV0"
   },
   "folgen": [
     {
       "nummer": 1,
-      "titel": "Mimi und die Schulklasse",
+      "titel": "Meli und die Schulklasse",
       "datum": "2026-12-01",
       "vorschaubild": "bilder/Folge01.jpg",
       "youtube": "vrikBwjjgoM",
@@ -73,7 +73,7 @@
     },
     {
       "nummer": 9,
-      "titel": "Der Schal für Mimi",
+      "titel": "Der Schal für Meli",
       "datum": "2026-12-09",
       "vorschaubild": "bilder/Folge09.jpg",
       "youtube": "BFRDDLwmgPk",
